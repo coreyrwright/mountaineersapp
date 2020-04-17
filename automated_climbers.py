@@ -37,7 +37,6 @@ def valid_number_input(input_description, number_range):
             break
 
 
-
 def games_setup():
     global number_of_players
     global number_of_ACs
@@ -45,14 +44,16 @@ def games_setup():
                 f" (max 6 players):\n")
     number_of_players = valid_number_input(f"Choose between 1 and 6 players:",
                                             range(1,2,1))
-    print(f"{number_of_players} is number of players")
+    print(f"You have chosen {number_of_players} players for this game.")
+    print_pause(f"You have selected {number_of_players} players for this game.")
+    max_number_of_ACs = (6 - (number_of_players))
+    print_pause("Please select the number of Automatic Climbers you would like to use")
+    number_of_ACs = valid_number_input(f"The maximum number of AC's you may "
+                    f"use is {max_number_of_ACs}",range(0,max_number_of_ACs,1))
 
 
-    # print_pause(f"You have selected {number_of_players} players for this game.")
-    # max_number_of_ACs = (6 - (number_of_players))
-    # print_pause("Please select the number of Automatic Climbers you would like to use")
-    # number_of_ACs = valid_number_input(f"The maximum number of AC's you may "
-    #                 f"use is {max_number_of_ACs}",range(0,max_number_of_ACs,1))
+
+def color_of_players(number_of_players):
 
 games_setup()
 
