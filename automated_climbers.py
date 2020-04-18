@@ -43,7 +43,7 @@ def games_setup():
     print_pause(f"Please select the number of players for this game"
                 f" (max 6 players):\n")
     number_of_players = valid_number_input(f"Choose between 1 and 6 players:",
-                                            range(1,2,1))
+                                            range(1,7,1))
     print(f"You have chosen {number_of_players} players for this game.")
     print_pause(f"You have selected {number_of_players} players for this game.")
     max_number_of_ACs = (6 - (number_of_players))
@@ -52,8 +52,14 @@ def games_setup():
                     f"use is {max_number_of_ACs}",range(0,max_number_of_ACs,1))
 
 
-
 def color_of_players(number_of_players):
+    print_pause("What color would you like your players to be?")
+    players_list = []
+    players = 1
+    for players in range(0,(number_of_players+1),1):
+        players_list.append("Player + {players}")
+        players += 1
+
 
 games_setup()
-
+color_of_players(number_of_players)
